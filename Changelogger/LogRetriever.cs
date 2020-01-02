@@ -86,7 +86,7 @@ namespace Changelogger
         public void HandleDiscrepancies(string dirAddress)
         {
             if(MasterList.Count == 0) {
-                StreamWriter f = new StreamWriter(File.OpenWrite(dirAddress + ProgramSettings.RecordFolder + ProgramSettings.RecordNameFormat));
+                StreamWriter f = new StreamWriter(File.OpenWrite(dirAddress + ProgramSettings.RecordFolder + DateTime.Now.ToString(ProgramSettings.RecordNameFormat) + ".txt"));
                 f.WriteLine("New files:");
                 f = WriteList(f, FullList, dirAddress);
                 f.Close();
